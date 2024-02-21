@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		27C2783F2B867580005D0062 /* MarvelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2783E2B867580005D0062 /* MarvelApp.swift */; };
-		27C278412B867580005D0062 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C278402B867580005D0062 /* ContentView.swift */; };
+		27C278412B867580005D0062 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C278402B867580005D0062 /* RootView.swift */; };
 		27C278432B867582005D0062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27C278422B867582005D0062 /* Assets.xcassets */; };
 		27C278472B867582005D0062 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27C278462B867582005D0062 /* Preview Assets.xcassets */; };
 		27C278512B867583005D0062 /* MarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C278502B867583005D0062 /* MarvelTests.swift */; };
 		27C2785B2B867583005D0062 /* MarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2785A2B867583005D0062 /* MarvelUITests.swift */; };
 		27C2785D2B867583005D0062 /* MarvelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2785C2B867583005D0062 /* MarvelUITestsLaunchTests.swift */; };
+		27C278702B867727005D0062 /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2786F2B867727005D0062 /* NetworkDataSource.swift */; };
+		27C278752B867AF3005D0062 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C278742B867AF3005D0062 /* Authentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		27C2783B2B867580005D0062 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C2783E2B867580005D0062 /* MarvelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApp.swift; sourceTree = "<group>"; };
-		27C278402B867580005D0062 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		27C278402B867580005D0062 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		27C278422B867582005D0062 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27C278442B867582005D0062 /* Marvel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Marvel.entitlements; sourceTree = "<group>"; };
 		27C278462B867582005D0062 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		27C278562B867583005D0062 /* MarvelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C2785A2B867583005D0062 /* MarvelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelUITests.swift; sourceTree = "<group>"; };
 		27C2785C2B867583005D0062 /* MarvelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		27C2786F2B867727005D0062 /* NetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
+		27C278742B867AF3005D0062 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				27C2783E2B867580005D0062 /* MarvelApp.swift */,
-				27C278402B867580005D0062 /* ContentView.swift */,
+				27C278742B867AF3005D0062 /* Authentication.swift */,
+				27C278692B8675FB005D0062 /* Shared */,
 				27C278422B867582005D0062 /* Assets.xcassets */,
 				27C278442B867582005D0062 /* Marvel.entitlements */,
 				27C278452B867582005D0062 /* Preview Content */,
@@ -127,6 +132,79 @@
 				27C2785C2B867583005D0062 /* MarvelUITestsLaunchTests.swift */,
 			);
 			path = MarvelUITests;
+			sourceTree = "<group>";
+		};
+		27C278692B8675FB005D0062 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				27C278712B8679F4005D0062 /* Domain */,
+				27C2786A2B867664005D0062 /* Data */,
+				27C2786D2B867680005D0062 /* UI */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		27C2786A2B867664005D0062 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				27C2786E2B8676FD005D0062 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		27C2786B2B86766B005D0062 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		27C2786D2B867680005D0062 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				27C278782B867BCE005D0062 /* Root */,
+				27C278762B867B85005D0062 /* List */,
+				27C278772B867BBB005D0062 /* Detail */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		27C2786E2B8676FD005D0062 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				27C2786F2B867727005D0062 /* NetworkDataSource.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		27C278712B8679F4005D0062 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				27C2786B2B86766B005D0062 /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		27C278762B867B85005D0062 /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		27C278772B867BBB005D0062 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		27C278782B867BCE005D0062 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				27C278402B867580005D0062 /* RootView.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +337,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27C278412B867580005D0062 /* ContentView.swift in Sources */,
+				27C278412B867580005D0062 /* RootView.swift in Sources */,
+				27C278702B867727005D0062 /* NetworkDataSource.swift in Sources */,
+				27C278752B867AF3005D0062 /* Authentication.swift in Sources */,
 				27C2783F2B867580005D0062 /* MarvelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
