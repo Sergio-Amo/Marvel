@@ -16,7 +16,7 @@ extension URLResponse {
     /// let statusCode = response.statusCode
     /// ```
     
-    var statusCode: Int? {
+    var computedStatusCode: Int? {
         return (self as? HTTPURLResponse)?.statusCode
     }
 }

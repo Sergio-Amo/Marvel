@@ -32,7 +32,7 @@ final class RootViewModel: ObservableObject {
         URLSession.shared
             .dataTaskPublisher(for: Network().getCharactersRequest(offset: offset))
             .tryMap {
-                guard $0.response.statusCode == 200 else {
+                guard $0.response.computedStatusCode == 200 else {
                     throw URLError(.badServerResponse)
                 }
                 return $0.data
