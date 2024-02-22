@@ -26,7 +26,7 @@ struct CharacterCellView: View {
             } else {
                 Image(.imageNotAvailable)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
             }
             // Text
             VStack{

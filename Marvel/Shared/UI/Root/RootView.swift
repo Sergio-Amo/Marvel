@@ -20,8 +20,7 @@ struct RootView: View {
                 }
             case .loading:
                 withAnimation {
-                    Text("Loading!")
-                    //LoaderView()
+                    LoadingView()
                 }
             case .loaded:
                 withAnimation {
@@ -30,8 +29,7 @@ struct RootView: View {
                 }
             case .error(error: let error):
                 withAnimation {
-                    Text("Error: \(error)")
-                    // ErrorView(error: error)
+                    ErrorView(error: error)
                 }
         }
     }
