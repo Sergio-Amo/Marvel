@@ -18,6 +18,8 @@
 		27C2785D2B867583005D0062 /* MarvelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2785C2B867583005D0062 /* MarvelUITestsLaunchTests.swift */; };
 		27C278702B867727005D0062 /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2786F2B867727005D0062 /* NetworkDataSource.swift */; };
 		27C278752B867AF3005D0062 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C278742B867AF3005D0062 /* Authentication.swift */; };
+		27F839122B87AB17002D3A66 /* MarvelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F839112B87AB17002D3A66 /* MarvelResponse.swift */; };
+		27F839142B87ABF3002D3A66 /* MarvelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F839132B87ABF3002D3A66 /* MarvelItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		27C2785C2B867583005D0062 /* MarvelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		27C2786F2B867727005D0062 /* NetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
 		27C278742B867AF3005D0062 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		27F839112B87AB17002D3A66 /* MarvelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelResponse.swift; sourceTree = "<group>"; };
+		27F839132B87ABF3002D3A66 /* MarvelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,8 @@
 		27C2786B2B86766B005D0062 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				27F839112B87AB17002D3A66 /* MarvelResponse.swift */,
+				27F839132B87ABF3002D3A66 /* MarvelItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,6 +361,8 @@
 				27C278412B867580005D0062 /* RootView.swift in Sources */,
 				27C278702B867727005D0062 /* NetworkDataSource.swift in Sources */,
 				27C278752B867AF3005D0062 /* Authentication.swift in Sources */,
+				27F839142B87ABF3002D3A66 /* MarvelItem.swift in Sources */,
+				27F839122B87AB17002D3A66 /* MarvelResponse.swift in Sources */,
 				27A898FF2B869659007F03A4 /* Extension+URL.swift in Sources */,
 				27C2783F2B867580005D0062 /* MarvelApp.swift in Sources */,
 			);
