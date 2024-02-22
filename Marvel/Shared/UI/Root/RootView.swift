@@ -8,17 +8,36 @@
 import SwiftUI
 
 struct RootView: View {
+    // Load the viewModel
+    @EnvironmentObject var viewModel: RootViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        switch viewModel.status {
+            case .none:
+                withAnimation {
+                    Text("None!")
+                    // Not sure if i'll use this state
+                }
+            case .loading:
+                withAnimation {
+                    Text("Loading!")
+                    //LoaderView()
+                }
+            case .loaded:
+                withAnimation {
+                    Text("Characters!")
+                    //ListView()
+                }
+            case .error(error: let error):
+                withAnimation {
+                    Text("Error: \(error)")
+                    // ErrorView(error: error)
+                }
         }
-        .padding()
     }
 }
 
 #Preview {
     RootView()
+        .environmentObject(RootViewModel(debug: true))
 }

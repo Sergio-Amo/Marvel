@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2710591E2B87BC88003D9CC7 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710591D2B87BC88003D9CC7 /* RootViewModel.swift */; };
 		27A898FF2B869659007F03A4 /* Extension+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A898FE2B869659007F03A4 /* Extension+URL.swift */; };
 		27A899012B86993B007F03A4 /* Extension+URLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A899002B86993B007F03A4 /* Extension+URLResponse.swift */; };
 		27C2783F2B867580005D0062 /* MarvelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2783E2B867580005D0062 /* MarvelApp.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2710591D2B87BC88003D9CC7 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		27A898FE2B869659007F03A4 /* Extension+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URL.swift"; sourceTree = "<group>"; };
 		27A899002B86993B007F03A4 /* Extension+URLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLResponse.swift"; sourceTree = "<group>"; };
 		27C2783B2B867580005D0062 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				27C278402B867580005D0062 /* RootView.swift */,
+				2710591D2B87BC88003D9CC7 /* RootViewModel.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				27C278752B867AF3005D0062 /* Authentication.swift in Sources */,
 				27F839122B87AB17002D3A66 /* MarvelResponse.swift in Sources */,
 				27A898FF2B869659007F03A4 /* Extension+URL.swift in Sources */,
+				2710591E2B87BC88003D9CC7 /* RootViewModel.swift in Sources */,
 				27C2783F2B867580005D0062 /* MarvelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
