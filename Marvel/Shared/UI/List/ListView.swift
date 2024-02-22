@@ -17,7 +17,7 @@ struct ListView: View {
                    let characters = marvel.data?.results {
                     ForEach(characters) { character in
                         CharacterCellView(character: character)
-                            .frame(height: 222)
+                            .frame(height: 256)
                             .background(
                                 NavigationLink(destination: LoadingView()) { // TODO: Call to detailView with the hero
                                     EmptyView()

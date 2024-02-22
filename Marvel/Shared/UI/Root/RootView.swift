@@ -24,8 +24,7 @@ struct RootView: View {
                 }
             case .loaded:
                 withAnimation {
-                    Text("Characters!")
-                    //ListView()
+                    ListView()
                 }
             case .error(error: let error):
                 withAnimation {

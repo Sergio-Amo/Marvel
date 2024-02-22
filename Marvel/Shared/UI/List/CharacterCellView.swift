@@ -18,6 +18,8 @@ struct CharacterCellView: View {
                 AsyncImage(url: image) {
                     $0
                         .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(maxHeight: 256)
                 } placeholder: {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .blue))
@@ -27,13 +29,13 @@ struct CharacterCellView: View {
                 Image(.imageNotAvailable)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
+                    .frame(maxHeight: 256)
             }
             // Text
             VStack{
                 Spacer()
                 Text(character.name ?? "")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                //.frame(minWidth: 0, maxWidth: .infinity)
                     .font(.title)
                     .bold()
                     .foregroundStyle(Color(.white))
@@ -46,7 +48,7 @@ struct CharacterCellView: View {
             }
         }
         .cornerRadius(15)
-        .frame(maxHeight: 400)
+        .frame(maxHeight: 256)
         .id(0)
     }
 }
