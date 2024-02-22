@@ -38,7 +38,7 @@ struct CharacterCellView: View {
                     .bold()
                     .foregroundStyle(Color(.white))
                     .padding()
-                    .padding(.top, 42)
+                    .padding(.top, 30)
                     .background(
                         LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom)
                     )
@@ -46,6 +46,7 @@ struct CharacterCellView: View {
             }
         }
         .cornerRadius(15)
+        .frame(maxHeight: 400)
         .id(0)
     }
 }
