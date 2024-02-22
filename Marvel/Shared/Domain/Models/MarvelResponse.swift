@@ -48,7 +48,7 @@ struct Thumbnail: Codable {
         case path
         case thumbnailExtension = "extension"
     }
-    var thumbnailFullPath: URL? {
+    var fullPath: URL? {
         guard let path,
               let thumbnailExtension else {
             return nil
