@@ -49,11 +49,12 @@ struct DetailView: View {
                 }
             }
             .id(0)
-            Spacer()
             
             Text(character.description ?? "No descripion available")
-                .padding()
+                .padding(12)
                 .font(.title3)
+            
+            Spacer()
         }
     }
 }
