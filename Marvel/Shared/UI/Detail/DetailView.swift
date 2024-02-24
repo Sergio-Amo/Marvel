@@ -24,7 +24,7 @@ struct DetailView: View {
                     AsyncImage(url: image) {
                         $0
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
+                            .aspectRatio(contentMode: .fill)
                     } placeholder: {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle(tint: .blue))
@@ -52,6 +52,67 @@ struct DetailView: View {
             }
             .id(0)
             
+            
+            
+            
+            
+            
+            if let series = viewModel.marvelItems,
+               !series.isEmpty {
+                HStack {
+                    Text("Series:")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .bold()
+                    Spacer()
+                }
+                .padding(.top, 32)
+                ScrollView(.horizontal, showsIndicators: false){
+                    LazyHStack{
+                        ForEach(series) { serie in
+                            
+                            
+                            VStack{
+                                // Image
+                                if let image = serie.thumbnail?.fullPathPortrait {
+                                    AsyncImage(url: image) {
+                                        $0
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                    } placeholder: {
+                                        ProgressView()
+                                            .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                                            .scaleEffect(4)
+                                    }
+                                    .frame(width: 216, height: 324)
+                                    .padding()
+                                } else {
+                                    Image(.imageNotAvailable)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
+                                
+                                Text(serie.title ?? "No title")
+                                    .lineLimit(2)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                    .truncationMode(.tail)
+                                
+                            }
+                            .frame(width: 216)
+                            .padding()
+                        }
+                    }
+                }
+                .id(2)
+            }
+            
+            
+            HStack {
+                Text("Description:")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .bold()
+                Spacer()
+            }
+            
             Text(character.description ?? "No descripion available")
                 .padding(12)
                 .font(.title3)
@@ -78,6 +139,7 @@ struct DetailView: View {
             thumbnail: Thumbnail(
                 path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
                 thumbnailExtension: "jpg")
-        )
+        ),
+        debug: true
     )
 }
