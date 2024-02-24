@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct DetailView: View {
-    var character: MarvelItem //The Model
+    var character: MarvelItem
+    var debug: Bool
     @StateObject private var viewModel = DetailViewModel()
     
-    init(character: MarvelItem) {
+    init(character: MarvelItem, debug: Bool = false) {
         self.character = character
+        self.debug = debug
     }
     var body: some View {
         ScrollView {
@@ -55,6 +57,10 @@ struct DetailView: View {
                 .font(.title3)
             
             Spacer()
+        }.onAppear {
+            if let id = character.id {
+                debug ? viewModel.getSeriesMock() : viewModel.getSeries(id: id)
+            }
         }
     }
 }
