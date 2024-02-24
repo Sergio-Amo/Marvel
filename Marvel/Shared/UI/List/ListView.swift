@@ -10,6 +10,9 @@ import SwiftUI
 struct ListView: View {
     @EnvironmentObject var rootViewModel: RootViewModel
     
+    //Color scheme
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         NavigationStack {
             List {
@@ -19,10 +22,12 @@ struct ListView: View {
                         CharacterCellView(character: character)
                             .frame(height: 256)
                             .background(
-                                NavigationLink(destination: LoadingView()) { // TODO: Call to detailView with the hero
+                                NavigationLink(destination: DetailView(character: character)) {
                                     EmptyView()
                                 }
                             )
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(colorScheme == .dark ? Color.black : Color.clear)
                     }
                 }
             }
