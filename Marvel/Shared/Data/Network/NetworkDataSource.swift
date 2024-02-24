@@ -18,12 +18,12 @@ struct HTTPMethods {
 struct NetworkConstants {
     static let limit = "?limit=20"
     static let baseUrl = "https://gateway.marvel.com/v1/public"
-    private static let _charactersEndPoint = "/characters"
-    private static let _seriesEndPoint = "/series"
+    private static let charactersEndPoint = "/characters"
+    private static let seriesEndPoint = "/series"
     // Computed properties & functions
-    static var charactersEndPoint: String { "\(baseUrl)\(_charactersEndPoint)" }
-    static var seriesEndPoint: String { "\(baseUrl)\(_seriesEndPoint)" }
-    static func characterOffset(_ offset: Int) -> String { "&offset=\(offset)" }
+    static var charactersUrl: String { "\(baseUrl)\(charactersEndPoint)" }
+    static var seriesUrl: String { "\(baseUrl)\(seriesEndPoint)" }
+    static func itemOffset(_ offset: Int) -> String { "&offset=\(offset)" }
     static func characterID(_ id: Int) -> String { "&characters=\(id)" }
 }
 
@@ -33,13 +33,13 @@ struct Network {
     
     func getCharactersRequest(offset: Int = 0) -> URLRequest {
         // BaseURL + Endpoint + Limit + offset + Auth
-        let urlWithParams = NetworkConstants.charactersEndPoint+NetworkConstants.limit+NetworkConstants.characterOffset(offset)+"&"+auth.authParams
+        let urlWithParams = NetworkConstants.charactersUrl+NetworkConstants.limit+NetworkConstants.itemOffset(offset)+"&"+auth.authParams
         return createRequest(from: urlWithParams)
     }
     
-    func getCharacterSeriesRequest(id: Int) -> URLRequest {
-        // BaseURL + Endpoint + Limit + id + Auth
-        let urlWithParams =  NetworkConstants.seriesEndPoint+NetworkConstants.limit+NetworkConstants.characterID(id)+"&"+auth.authParams
+    func getCharacterSeriesRequest(id: Int, offset: Int = 0) -> URLRequest {
+        // BaseURL + Endpoint + Limit + id + offset + Auth
+        let urlWithParams =  NetworkConstants.seriesUrl+NetworkConstants.limit+NetworkConstants.characterID(id)+NetworkConstants.itemOffset(offset)+"&"+auth.authParams
         return createRequest(from: urlWithParams)
     }
     
