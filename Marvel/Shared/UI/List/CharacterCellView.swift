@@ -12,55 +12,73 @@ struct CharacterCellView: View {
     var character: MarvelItem
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom), content: {
             // Image
-            if let image = character.thumbnail?.fullPath {
+            if let image = character.thumbnail?.fullPathLandscape {
                 AsyncImage(url: image) {
                     $0
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(maxHeight: 256)
+                        .scaledToFit()
                 } placeholder: {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                         .scaleEffect(4)
-                }
+                        .frame(width: 400, height: 222)
+                        .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }//.background(.red)
             } else {
                 Image(.imageNotAvailable)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(maxHeight: 256)
+                    .scaledToFit()
             }
-            // Text
-            VStack{
-                Spacer()
-                Text(character.name ?? "")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.title)
-                    .bold()
-                    .foregroundStyle(Color(.white))
-                    .padding()
-                    .padding(.top, 30)
-                    .background(
-                        LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom)
-                    )
-                    .id(1)
-            }
-        }
+            Text(character.name ?? "")
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.title)
+                .bold()
+                .foregroundStyle(Color(.white))
+                .padding()
+                .padding(.top, 30)
+                .background(
+                    LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom)
+                )
+                .id(1)
+        })
         .cornerRadius(15)
-        .frame(maxHeight: 256)
         .id(0)
     }
 }
 
 #Preview {
-    CharacterCellView(
-        character: MarvelItem(
-            id: 1,
-            name: "A very long name for a marvel character",
-            description: "LoremIpsum",
-            thumbnail: Thumbnail(
-                path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
-                thumbnailExtension: "jpg")
-        ))
+    /* List {
+     CharacterCellView(
+     character: MarvelItem(
+     id: 1,
+     name: "A very long name for a marvel character",
+     description: "LoremIpsum",
+     thumbnail: Thumbnail(
+     path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
+     thumbnailExtension: "jpg")
+     ))*/
+    
+    List {
+        CharacterCellView(
+            character: MarvelItem(
+                id: 1,
+                name: "A very long name for a marvel character",
+                description: "LoremIpsum",
+                thumbnail: Thumbnail(
+                    path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
+                    thumbnailExtension: "jpg")
+            ))
+        .background(
+            NavigationLink(destination: EmptyView()) {
+                EmptyView()
+            }
+        )
+        .listRowSeparator(.hidden)
+        
+    }
+    .frame( maxWidth: .infinity)
+    .listStyle(GroupedListStyle())
+    
 }

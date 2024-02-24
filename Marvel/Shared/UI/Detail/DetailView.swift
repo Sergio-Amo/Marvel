@@ -18,7 +18,7 @@ struct DetailView: View {
     }
     var body: some View {
         ScrollView {
-            ZStack(alignment: .bottom) {
+            ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom), content: {
                 // Image
                 if let image = character.thumbnail?.fullPath {
                     AsyncImage(url: image) {
@@ -35,21 +35,21 @@ struct DetailView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
-                VStack {
-                    // Text
-                    Text(character.name ?? "")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.title)
-                        .bold()
-                        .foregroundStyle(.white)
-                        .padding(.top, 30)
-                        .padding()
-                        .background(
-                            LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom)
-                        )
-                        .id(1)
-                }
-            }
+                
+                // Text
+                Text(character.name ?? "")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.title)
+                    .bold()
+                    .foregroundStyle(.white)
+                    .padding(.top, 30)
+                    .padding()
+                    .background(
+                        LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom)
+                    )
+                    .id(1)
+                
+            })
             .id(0)
             
             
@@ -60,12 +60,13 @@ struct DetailView: View {
             if let series = viewModel.marvelItems,
                !series.isEmpty {
                 HStack {
-                    Text("Series:")
+                    Text("Series")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .bold()
                     Spacer()
                 }
-                .padding(.top, 32)
+                .padding()
+                
                 ScrollView(.horizontal, showsIndicators: false){
                     LazyHStack{
                         ForEach(series) { serie in

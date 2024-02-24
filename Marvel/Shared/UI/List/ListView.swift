@@ -20,7 +20,6 @@ struct ListView: View {
                    let characters = marvel.data?.results {
                     ForEach(characters) { character in
                         CharacterCellView(character: character)
-                            .frame(height: 256)
                             .background(
                                 NavigationLink(destination: DetailView(character: character)) {
                                     EmptyView()
