@@ -56,4 +56,20 @@ struct Thumbnail: Codable {
         // Returns the string as a https url
         return URL(string: "\(path).\(thumbnailExtension)")?.upgradeUrlScheme
     }
+    var fullPathLandscape: URL? {
+        guard let path,
+              let thumbnailExtension else {
+            return nil
+        }
+        // Returns the string as a https url
+        return URL(string: "\(path)/landscape_incredible.\(thumbnailExtension)")?.upgradeUrlScheme
+    }
+    var fullPathPortrait: URL? {
+        guard let path,
+              let thumbnailExtension else {
+            return nil
+        }
+        // Returns the string as a https url
+        return URL(string: "\(path)/portrait_incredible.\(thumbnailExtension)")?.upgradeUrlScheme
+    }
 }
