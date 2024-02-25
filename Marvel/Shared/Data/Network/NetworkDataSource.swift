@@ -16,7 +16,8 @@ struct HTTPMethods {
 }
 
 struct NetworkConstants {
-    static let limit = "?limit=20"
+    static let itemLimit: Int = 20
+    static let limit = "?limit=\(itemLimit)"
     static let baseUrl = "https://gateway.marvel.com/v1/public"
     private static let charactersEndPoint = "/characters"
     private static let seriesEndPoint = "/series"

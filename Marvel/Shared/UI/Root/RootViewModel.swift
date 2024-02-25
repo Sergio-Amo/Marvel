@@ -14,7 +14,9 @@ enum Status {
 
 final class RootViewModel: ObservableObject {
     @Published var status = Status.none
-    @Published var marvel: MarvelResponse?
+    @Published var marvelItem: [MarvelItem]? = []
+    @Published var itemLimitReached = false
+    var offset = 0
     
     var suscriptors = Set<AnyCancellable>()
     
@@ -22,13 +24,15 @@ final class RootViewModel: ObservableObject {
         if debug {
             getCharactersTesting()
         } else {
-            getCharacters(offset: 0)
+            getCharacters()
         }
     }
     
-    func getCharacters(offset: Int) {
-        status = .loading
-        
+    func getCharacters() {
+        if self.itemLimitReached == true { return }
+        if offset == 0 {
+            status = .loading
+        }
         URLSession.shared
             .dataTaskPublisher(for: Network().getCharactersRequest(offset: offset))
             .tryMap {
@@ -47,7 +51,16 @@ final class RootViewModel: ObservableObject {
                         self.status = .loaded
                 }
             } receiveValue: { data in
-                self.marvel = data
+                if let items = data.data?.results {
+                    self.marvelItem? += items
+                }
+                //self.marvelItem = data.data?.results
+                self.offset += NetworkConstants.itemLimit
+                // set itemLimitReached when there's no more items to load
+                if let offset = data.data?.offset, let count = data.data?.count, let total = data.data?.total,
+                   offset + count == total {
+                    self.itemLimitReached = true
+                }
             }
             .store(in: &suscriptors)
     }
@@ -57,11 +70,11 @@ final class RootViewModel: ObservableObject {
     
     func getCharactersTesting(){
         self.status = .loading
-        self.marvel =  getCharactersDesign()
+        self.marvelItem =  getCharactersDesign()
         self.status = .loaded
     }
     
-    func getCharactersDesign() -> MarvelResponse {
+    func getCharactersDesign() -> [MarvelItem] {
         let characters = [
             MarvelItem(id: 1, name: "Foo", description: "Lorem Ipsum 1",
                        thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: "jpg")),
@@ -77,7 +90,7 @@ Nunc pulvinar sapien et ligula. Senectus et netus et malesuada fames ac turpis. 
                        ,
                        thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", thumbnailExtension: "jpg"))
         ]
-        return MarvelResponse(code: 200, data: DataClass(offset: 100, total: 1000, count: 4, results: characters))
+        return characters
     }
 }
 

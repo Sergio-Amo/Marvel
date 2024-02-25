@@ -25,7 +25,7 @@ struct CharacterCellView: View {
                         .scaleEffect(4)
                         .frame(width: 400, height: 222)
                         .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                }//.background(.red)
+                }
             } else {
                 Image(.imageNotAvailable)
                     .resizable()
