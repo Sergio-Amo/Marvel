@@ -51,12 +51,7 @@ struct DetailView: View {
                 
             })
             .id(0)
-            
-            
-            
-            
-            
-            
+
             if let series = viewModel.marvelItems,
                !series.isEmpty {
                 HStack {
@@ -108,7 +103,6 @@ struct DetailView: View {
                 }
                 .id(2)
             }
-            
             
             HStack {
                 Text("Description:")
