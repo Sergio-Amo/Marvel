@@ -48,7 +48,6 @@ struct DetailView: View {
                         LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom)
                     )
                     .id(1)
-                
             })
             .id(0)
 
@@ -65,8 +64,6 @@ struct DetailView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack{
                         ForEach(series) { serie in
-                            
-                            
                             VStack{
                                 // Image
                                 if let image = serie.thumbnail?.fullPathPortrait {
@@ -99,6 +96,20 @@ struct DetailView: View {
                             .padding(.bottom, 36)
                             .padding(.top, 0)
                         }
+                        // Last item ProgressView that triggers getSeries onAppear
+                        if !viewModel.itemLimitReached {
+                            ProgressView()
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                                .scaleEffect(2)
+                                .padding(32)
+                                .onAppear {
+                                    if let id = character.id {
+                                        viewModel.getSeries(id: id)
+                                    }
+                                }
+                        }
+                        
                     }
                 }
                 .id(2)

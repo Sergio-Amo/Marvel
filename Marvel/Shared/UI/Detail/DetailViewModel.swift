@@ -10,12 +10,19 @@ import Combine
 
 final class DetailViewModel : ObservableObject {
     @Published var status = Status.none
-    @Published var marvelItems: [MarvelItem]?
+    @Published var marvelItems: [MarvelItem]? = []
+    @Published var itemLimitReached = false
     
+    var offset = 0
     var suscriptors = Set<AnyCancellable>()
     
-    func getSeries(id: Int, offset: Int = 0) {
-        status = .loading
+    func getSeries(id: Int) {
+        // This is to be extra careful but shouldn't be needed as the item that
+        // triggers the loading shouldn't be appearing if the limit has been reached
+        if self.itemLimitReached == true { return }
+        if offset == 0 {
+            status = .loading // TODO: ADD SERIES SPINNER
+        }
         
         URLSession.shared
             .dataTaskPublisher(for: Network().getCharacterSeriesRequest(id: id, offset: offset))
@@ -35,7 +42,15 @@ final class DetailViewModel : ObservableObject {
                         self.status = .loaded
                 }
             } receiveValue: { data in
-                self.marvelItems = data.data?.results
+                if let items = data.data?.results {
+                    self.marvelItems? += items
+                }
+                self.offset += NetworkConstants.itemLimit
+                // set itemLimitReached when there's no more items to load
+                if let offset = data.data?.offset, let count = data.data?.count, let total = data.data?.total,
+                   offset + count == total {
+                    self.itemLimitReached = true
+                }
             }
             .store(in: &suscriptors)
     }

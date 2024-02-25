@@ -16,7 +16,7 @@ struct ListView: View {
     var body: some View {
         NavigationStack {
             List {
-                if let characters = rootViewModel.marvelItem {
+                if let characters = rootViewModel.marvelItems {
                     ForEach(characters) { character in
                         CharacterCellView(character: character)
                             .background(
@@ -33,6 +33,9 @@ struct ListView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .listRowSeparator(.hidden)
                         .listRowBackground(colorScheme == .dark ? Color.black : Color.clear)
+                        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                        .scaleEffect(2)
+                        .padding()
                         .onAppear {
                             rootViewModel.getCharacters()
                         }

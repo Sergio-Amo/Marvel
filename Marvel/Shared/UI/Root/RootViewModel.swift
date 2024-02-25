@@ -14,7 +14,7 @@ enum Status {
 
 final class RootViewModel: ObservableObject {
     @Published var status = Status.none
-    @Published var marvelItem: [MarvelItem]? = []
+    @Published var marvelItems: [MarvelItem]? = []
     @Published var itemLimitReached = false
     var offset = 0
     
@@ -29,8 +29,10 @@ final class RootViewModel: ObservableObject {
     }
     
     func getCharacters() {
+        // This is to be extra careful but shouldn't be needed as the item that
+        // triggers the loading shouldn't be appearing if the limit has been reached
         if self.itemLimitReached == true { return }
-        if offset == 0 {
+        if offset == 0 { // Only trigger the loading view the first time
             status = .loading
         }
         URLSession.shared
@@ -52,9 +54,8 @@ final class RootViewModel: ObservableObject {
                 }
             } receiveValue: { data in
                 if let items = data.data?.results {
-                    self.marvelItem? += items
+                    self.marvelItems? += items
                 }
-                //self.marvelItem = data.data?.results
                 self.offset += NetworkConstants.itemLimit
                 // set itemLimitReached when there's no more items to load
                 if let offset = data.data?.offset, let count = data.data?.count, let total = data.data?.total,
@@ -70,7 +71,7 @@ final class RootViewModel: ObservableObject {
     
     func getCharactersTesting(){
         self.status = .loading
-        self.marvelItem =  getCharactersDesign()
+        self.marvelItems =  getCharactersDesign()
         self.status = .loaded
     }
     
