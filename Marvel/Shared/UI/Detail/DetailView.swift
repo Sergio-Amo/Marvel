@@ -61,13 +61,13 @@ struct DetailView: View {
                !series.isEmpty {
                 HStack {
                     Text("Series")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.title)
                         .bold()
                     Spacer()
                 }
-                .padding()
+                .padding([.horizontal, .top], 16)
                 
-                ScrollView(.horizontal, showsIndicators: false){
+                ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack{
                         ForEach(series) { serie in
                             
@@ -85,7 +85,8 @@ struct DetailView: View {
                                             .scaleEffect(4)
                                     }
                                     .frame(width: 216, height: 324)
-                                    .padding()
+                                    .padding([.horizontal, .bottom])
+                                    .padding(.top, 8)
                                 } else {
                                     Image(.imageNotAvailable)
                                         .resizable()
@@ -96,10 +97,12 @@ struct DetailView: View {
                                     .lineLimit(2)
                                     .fixedSize(horizontal: false, vertical: true)
                                     .truncationMode(.tail)
-                                
+                                    .frame(height: 8)
                             }
                             .frame(width: 216)
-                            .padding()
+                            .padding(.horizontal, 12)
+                            .padding(.bottom, 36)
+                            .padding(.top, 0)
                         }
                     }
                 }
@@ -113,6 +116,7 @@ struct DetailView: View {
                     .bold()
                 Spacer()
             }
+            .padding([.horizontal, .top], 16)
             
             Text(character.description ?? "No descripion available")
                 .padding(12)
