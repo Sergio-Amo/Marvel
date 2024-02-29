@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ListView: View {
     @EnvironmentObject var rootViewModel: RootViewModel
-    
     //Color scheme (Dark/light mode)
     @Environment(\.colorScheme) var colorScheme
     

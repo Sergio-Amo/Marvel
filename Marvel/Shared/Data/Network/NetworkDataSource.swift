@@ -21,9 +21,9 @@ struct NetworkConstants {
     static let baseUrl = "https://gateway.marvel.com/v1/public"
     private static let charactersEndPoint = "/characters"
     private static let seriesEndPoint = "/series"
+    static let charactersUrl = "\(baseUrl)\(charactersEndPoint)"
+    static let seriesUrl = "\(baseUrl)\(seriesEndPoint)"
     // Computed properties & functions
-    static var charactersUrl: String { "\(baseUrl)\(charactersEndPoint)" }
-    static var seriesUrl: String { "\(baseUrl)\(seriesEndPoint)" }
     static func itemOffset(_ offset: Int) -> String { "&offset=\(offset)" }
     static func characterID(_ id: Int) -> String { "&characters=\(id)" }
 }

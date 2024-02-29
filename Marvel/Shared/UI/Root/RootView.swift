@@ -16,7 +16,8 @@ struct RootView: View {
             case .none:
                 withAnimation {
                     Text("None!")
-                    // Not sure if i'll use this state
+                    // TODO: Not sure if i'll use this state..
+                    // (maybe changhe it to reset and use it to reset the app from the errorView)
                 }
             case .loading:
                 withAnimation {

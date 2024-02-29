@@ -49,17 +49,6 @@ struct CharacterCellView: View {
 }
 
 #Preview {
-    /* List {
-     CharacterCellView(
-     character: MarvelItem(
-     id: 1,
-     name: "A very long name for a marvel character",
-     description: "LoremIpsum",
-     thumbnail: Thumbnail(
-     path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
-     thumbnailExtension: "jpg")
-     ))*/
-    
     List {
         CharacterCellView(
             character: MarvelItem(
@@ -70,15 +59,7 @@ struct CharacterCellView: View {
                     path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
                     thumbnailExtension: "jpg")
             ))
-        .background(
-            NavigationLink(destination: EmptyView()) {
-                EmptyView()
-            }
-        )
-        .listRowSeparator(.hidden)
-        
     }
     .frame( maxWidth: .infinity)
     .listStyle(GroupedListStyle())
-    
 }

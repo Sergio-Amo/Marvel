@@ -109,7 +109,6 @@ struct DetailView: View {
                                     }
                                 }
                         }
-                        
                     }
                 }
                 .id(2)

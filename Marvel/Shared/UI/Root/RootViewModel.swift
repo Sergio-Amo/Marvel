@@ -66,9 +66,6 @@ final class RootViewModel: ObservableObject {
             .store(in: &suscriptors)
     }
     
-    
-    // TODO: move this to network testing
-    
     func getCharactersTesting(){
         self.status = .loading
         self.marvelItems =  getCharactersDesign()
