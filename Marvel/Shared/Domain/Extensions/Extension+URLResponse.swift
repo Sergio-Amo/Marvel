@@ -8,14 +8,13 @@
 import Foundation
 
 extension URLResponse {
-    /// Computed property that returns the status code of a HTTP response.
+    /// Computed property that returns the status code of an HTTP response.
     /// 
-    /// - returns: Integer with the StatusCode or nil if fails
-    /// # Usage #
+    /// - Returns: Integer with the StatusCode or nil if fails
+    /// # Example #
     /// ```
     /// let statusCode = response.statusCode
     /// ```
-    
     var computedStatusCode: Int? {
         return (self as? HTTPURLResponse)?.statusCode
     }

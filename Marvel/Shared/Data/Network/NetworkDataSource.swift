@@ -8,14 +8,14 @@
 import Foundation
 
 // I've found no reasons to move Methods and constants outside as this file
-// has only 52 lines of code and both are relevant to the network layer
-struct HTTPMethods {
+// has only 55 lines of code and both are only relevant to the Network layer.
+enum HTTPMethods {
     static let get = "GET"
     static let content = "application/json"
     static let contentType = "Content-type"
 }
 
-struct NetworkConstants {
+enum NetworkConstants {
     static let itemLimit: Int = 20
     static let limit = "?limit=\(itemLimit)"
     static let baseUrl = "https://gateway.marvel.com/v1/public"
@@ -33,14 +33,16 @@ struct Network {
     let auth = Authentication()
     
     func getCharactersRequest(offset: Int = 0) -> URLRequest {
-        // BaseURL + Endpoint + Limit + offset + Auth
-        let urlWithParams = NetworkConstants.charactersUrl+NetworkConstants.limit+NetworkConstants.itemOffset(offset)+"&"+auth.authParams
+        let urlWithParams = with(NetworkConstants.self) {
+            "\($0.charactersUrl)\($0.limit)\($0.itemOffset(offset))&\(auth.authParams)"
+        }
         return createRequest(from: urlWithParams)
     }
     
     func getCharacterSeriesRequest(id: Int, offset: Int = 0) -> URLRequest {
-        // BaseURL + Endpoint + Limit + id + offset + Auth
-        let urlWithParams =  NetworkConstants.seriesUrl+NetworkConstants.limit+NetworkConstants.characterID(id)+NetworkConstants.itemOffset(offset)+"&"+auth.authParams
+        let urlWithParams = with(NetworkConstants.self) {
+            "\($0.seriesUrl)\($0.limit)\($0.characterID(id))\($0.itemOffset(offset))&\(auth.authParams)"
+        }
         return createRequest(from: urlWithParams)
     }
     

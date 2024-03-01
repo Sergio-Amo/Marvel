@@ -11,7 +11,7 @@ extension URL {
     /// Computed property that returns http urls to https
     ///
     /// - Returns: Upgraded https url if possible or the original input if not.
-    /// # Usage #
+    /// # Example #
     /// ```
     /// let httpURL = URL(string: "http://foo.com")!
     /// let httpsURL = httpURL.upgradeUrlScheme
