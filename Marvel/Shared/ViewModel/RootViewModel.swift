@@ -8,10 +8,6 @@
 import Combine
 import Foundation
 
-enum Status {
-    case none, loading, loaded, error(error: String)
-}
-
 final class RootViewModel: ObservableObject {
     @Published var status = Status.none
     @Published var marvelItems: [MarvelItem]? = []

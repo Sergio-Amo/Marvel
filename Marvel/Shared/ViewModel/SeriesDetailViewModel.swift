@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class DetailViewModel : ObservableObject {
+final class SeriesDetailViewModel : ObservableObject {
     @Published var status = Status.none
     @Published var marvelItems: [MarvelItem]? = []
     @Published var itemLimitReached = false
@@ -21,7 +21,7 @@ final class DetailViewModel : ObservableObject {
         // triggers the loading shouldn't be appearing if the limit has been reached
         if self.itemLimitReached == true { return }
         if offset == 0 {
-            status = .loading // TODO: ADD SERIES SPINNER
+            status = .loading
         }
         
         URLSession.shared

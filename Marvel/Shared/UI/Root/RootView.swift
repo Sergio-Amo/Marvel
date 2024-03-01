@@ -15,9 +15,7 @@ struct RootView: View {
         switch viewModel.status {
             case .none:
                 withAnimation {
-                    Text("None!")
-                    // TODO: Not sure if i'll use this state..
-                    // (maybe changhe it to reset and use it to reset the app from the errorView)
+                    ListView()
                 }
             case .loading:
                 withAnimation {

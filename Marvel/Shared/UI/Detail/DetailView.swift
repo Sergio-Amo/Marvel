@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailView: View {
     var character: MarvelItem
     var debug: Bool
-    @StateObject private var viewModel = DetailViewModel()
+    @StateObject private var viewModel = SeriesDetailViewModel()
     
     init(character: MarvelItem, debug: Bool = false) {
         self.character = character
@@ -52,7 +52,7 @@ struct DetailView: View {
             .id(0)
 
             if let series = viewModel.marvelItems,
-               !series.isEmpty {
+               viewModel.status != .loaded || !series.isEmpty  {
                 HStack {
                     Text("Series")
                         .font(.title)
