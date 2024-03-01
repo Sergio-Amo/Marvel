@@ -12,9 +12,9 @@ final class UpgradeUrlSchemeTests: XCTestCase {
 
     // SUT
     // URL extension upgradeUrlScheme
-    let httpUrls = [
+    let mixedUrls = [
         URL(string: "http://foo.bar"),
-        URL(string: "http://bar.baz"),
+        URL(string: "https://bar.baz"),
         URL(string: "http://biz.com"),
         URL(string: "http://foo.bar.net"),
         URL(string: "http://test.kc.es")
@@ -28,8 +28,8 @@ final class UpgradeUrlSchemeTests: XCTestCase {
     ]
     
     // This method will test the upgradeUrlScheme url extension
-    func testUpgradeUrlScheme() throws {
-        let httpsUrls = httpUrls.map{
+    func testUpgradeUrlScheme() {
+        let httpsUrls = mixedUrls.map{
             $0?.upgradeUrlScheme
         }
         // Test if upgraded urls has expected values
@@ -38,5 +38,10 @@ final class UpgradeUrlSchemeTests: XCTestCase {
         expectedUrls.forEach {
             XCTAssertTrue($0?.scheme == "https")
         }
+    }
+    
+    func testUpgradeUrlSchemeUnhappy() {
+        let nilUrl: URL? = nil
+        XCTAssertNil(nilUrl?.upgradeUrlScheme)
     }
 }
