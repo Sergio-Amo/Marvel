@@ -30,7 +30,11 @@ enum NetworkConstants {
 
 struct Network {
     
-    let auth = Authentication()
+    let auth: AuthenticationProtocol!
+    
+    init(auth: AuthenticationProtocol = Authentication()) {
+        self.auth = auth
+    }
     
     func getCharactersRequest(offset: Int = 0) -> URLRequest {
         let urlWithParams = with(NetworkConstants.self) {

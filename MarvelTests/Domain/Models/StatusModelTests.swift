@@ -14,7 +14,6 @@ final class StatusModelTests: XCTestCase {
         XCTAssertNotNil(Status.loading)
         XCTAssertNotNil(Status.loaded)
         let error1 = Status.error(error: "Error1")
-        let error2 = Status.error(error: "Error2")
         // Check value of error1
         if case .error(let actual) = error1 {
             XCTAssertEqual(actual, "Error1")
