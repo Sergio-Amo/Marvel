@@ -8,11 +8,9 @@
 import XCTest
 @testable import Marvel
 
-
 struct AuthenticationMock: AuthenticationProtocol {
     var authParams: String = "apikey=MyApiKey&ts=MyTs&hash=MyHash"
 }
-
 
 final class NetworkDataSourceTests: XCTestCase {
     
@@ -51,7 +49,7 @@ final class NetworkDataSourceTests: XCTestCase {
         
         var cases: Set<String> = ["limit", "offset", "apikey", "ts", "hash"]
         components?.forEach{ component in
-            switch(component.name) {
+            switch component.name {
                 case "limit":
                     XCTAssertEqual(component.value, "\(NetworkConstants.itemLimit)")
                 case "offset":
@@ -81,7 +79,7 @@ final class NetworkDataSourceTests: XCTestCase {
         
         var cases: Set<String> = ["limit", "offset", "apikey", "ts", "hash"]
         components?.forEach{ component in
-            switch(component.name) {
+            switch component.name {
                 case "limit":
                     XCTAssertEqual(component.value, "\(NetworkConstants.itemLimit)")
                 case "offset":

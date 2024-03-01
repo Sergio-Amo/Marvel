@@ -64,7 +64,7 @@ final class RootViewModel: ObservableObject {
     
     func getCharactersTesting(){
         self.status = .loading
-        self.marvelItems =  getCharactersDesign()
+        self.marvelItems = getCharactersDesign()
         self.status = .loaded
     }
     
