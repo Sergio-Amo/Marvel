@@ -69,7 +69,7 @@ final class RootViewModel: ObservableObject {
     }
     
     func getCharactersDesign() -> [MarvelItem] {
-        let characters = [
+        return [
             MarvelItem(id: 1, name: "Foo", description: "Lorem Ipsum 1",
                        thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", thumbnailExtension: "jpg")),
             MarvelItem(id: 2, name: "Bar", description: "Lorem Ipsum 2",
@@ -84,7 +84,6 @@ Nunc pulvinar sapien et ligula. Senectus et netus et malesuada fames ac turpis. 
                        ,
                        thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", thumbnailExtension: "jpg"))
         ]
-        return characters
     }
 }
 

@@ -8,6 +8,7 @@
 import Foundation
 
 /// Executes a closure that takes a value as its argument and returns the result.
+/// It's similar to the kotlin `with` scope function
 ///
 /// - parameter value: Value that will be passed to the closure.
 /// - parameter closure: Closure takes an argument T and returns a value R.

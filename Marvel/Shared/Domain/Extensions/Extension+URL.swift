@@ -8,7 +8,7 @@
 import Foundation
 
 extension URL {
-    /// Computed property that returns http urls to https
+    /// Computed property that converts http urls to https
     ///
     /// - Returns: Upgraded https url if possible or the original input if not.
     /// # Example #

@@ -34,42 +34,43 @@ struct MarvelItem: Codable, Identifiable {
         self.description = description
         self.thumbnail = thumbnail
     }
-    
 }
 
 // MARK: - Thumbnail
 struct Thumbnail: Codable {
+    /// -  Returns: url with the image EXTENSION NOT INCLUDED, protocol may not be https (using fullPath might be what you want)
     let path: String?
     // Extension as string instead of enum so it'll work fine even if at some point they insert other formats like heic
     // Shouldn't be a problem as far as xCode support the format.
+    /// -  Returns: the extension of the imahe
     let thumbnailExtension: String?
     
     enum CodingKeys: String, CodingKey {
         case path
         case thumbnailExtension = "extension"
     }
+    /// -  Returns: https url with the image including its extension
     var fullPath: URL? {
         guard let path,
               let thumbnailExtension else {
             return nil
         }
-        // Returns the string as a https url
         return URL(string: "\(path).\(thumbnailExtension)")?.upgradeUrlScheme
     }
+    /// -  Returns: https url with the image in landscape mode including its extension
     var fullPathLandscape: URL? {
         guard let path,
               let thumbnailExtension else {
             return nil
         }
-        // Returns the string as a https url
         return URL(string: "\(path)/landscape_incredible.\(thumbnailExtension)")?.upgradeUrlScheme
     }
+    /// -  Returns: https url with the image in portrait mode including its extension
     var fullPathPortrait: URL? {
         guard let path,
               let thumbnailExtension else {
             return nil
         }
-        // Returns the string as a https url
         return URL(string: "\(path)/portrait_incredible.\(thumbnailExtension)")?.upgradeUrlScheme
     }
 }
