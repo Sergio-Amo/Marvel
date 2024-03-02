@@ -37,6 +37,7 @@
 		27C298F62B92401D009E7B5A /* CharactersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C298F52B92401D009E7B5A /* CharactersViewModelTests.swift */; };
 		27D3BCF52B93A5D400CC133F /* MarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2785A2B867583005D0062 /* MarvelUITests.swift */; };
 		27D3BCF62B93A5D700CC133F /* MarvelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2785C2B867583005D0062 /* MarvelUITestsLaunchTests.swift */; };
+		27D3BCF82B93ACD100CC133F /* NetworkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3BCF72B93ACD100CC133F /* NetworkerTests.swift */; };
 		27F839122B87AB17002D3A66 /* MarvelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F839112B87AB17002D3A66 /* MarvelResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		27C298EE2B9228C8009E7B5A /* StatusModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModelTests.swift; sourceTree = "<group>"; };
 		27C298F22B922B56009E7B5A /* NetworkDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSourceTests.swift; sourceTree = "<group>"; };
 		27C298F52B92401D009E7B5A /* CharactersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModelTests.swift; sourceTree = "<group>"; };
+		27D3BCF72B93ACD100CC133F /* NetworkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkerTests.swift; sourceTree = "<group>"; };
 		27F839112B87AB17002D3A66 /* MarvelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				27C298F22B922B56009E7B5A /* NetworkDataSourceTests.swift */,
+				27D3BCF72B93ACD100CC133F /* NetworkerTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27C298EF2B9228C8009E7B5A /* StatusModelTests.swift in Sources */,
+				27D3BCF82B93ACD100CC133F /* NetworkerTests.swift in Sources */,
 				27C278512B867583005D0062 /* MarvelTests.swift in Sources */,
 				27C298F62B92401D009E7B5A /* CharactersViewModelTests.swift in Sources */,
 				27C298EA2B921299009E7B5A /* Extension+URLResponseTests.swift in Sources */,
