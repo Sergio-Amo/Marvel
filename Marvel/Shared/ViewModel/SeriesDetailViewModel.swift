@@ -37,7 +37,7 @@ final class SeriesDetailViewModel : ObservableObject {
             .sink { completion in
                 switch completion {
                     case .failure:
-                        self.status = .error(error: "Failed to load characters")
+                        self.status = .error(error: "Failed to load series")
                     case .finished:
                         self.status = .loaded
                 }
