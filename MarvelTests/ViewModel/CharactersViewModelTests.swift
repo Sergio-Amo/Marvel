@@ -25,7 +25,7 @@ final class CharactersViewModelTests: XCTestCase {
         let expectationLoaded = self.expectation(description: "status.loaded")
         let expectationCharacters = self.expectation(description: "Characters loaded")
         
-        // As get characters runs on init
+        // As get characters runs on init I'll initialize the viewModel here and remove it in teardown
         sut = CharactersViewModel(debug: true)
         
         // Check if it enters in loading and then loaded
@@ -52,6 +52,6 @@ final class CharactersViewModelTests: XCTestCase {
                 }
             }.store(in: &suscriptors)
         
-        waitForExpectations(timeout: 10)
+        waitForExpectations(timeout: 5)
     }
 }

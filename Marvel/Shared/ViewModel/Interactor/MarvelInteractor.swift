@@ -61,7 +61,7 @@ final class FakeMarvelInteractor: MarvelInteractorProtocol {
         
         //Emit once and finish
         return Just(response)
-            .delay(for: .seconds(0.5), scheduler: DispatchQueue.global(qos: .background))
+            .delay(for: .seconds(0.15), scheduler: DispatchQueue.global(qos: .userInitiated))
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
         
@@ -81,7 +81,7 @@ final class FakeMarvelInteractor: MarvelInteractorProtocol {
         
         //Emit once and finish
         return Just(response)
-            .delay(for: .seconds(0.5), scheduler: DispatchQueue.global(qos: .background))
+            .delay(for: .seconds(0.15), scheduler: DispatchQueue.global(qos: .userInitiated))
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
     }

@@ -25,8 +25,6 @@
 		27C278432B867582005D0062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27C278422B867582005D0062 /* Assets.xcassets */; };
 		27C278472B867582005D0062 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27C278462B867582005D0062 /* Preview Assets.xcassets */; };
 		27C278512B867583005D0062 /* MarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C278502B867583005D0062 /* MarvelTests.swift */; };
-		27C2785B2B867583005D0062 /* MarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2785A2B867583005D0062 /* MarvelUITests.swift */; };
-		27C2785D2B867583005D0062 /* MarvelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2785C2B867583005D0062 /* MarvelUITestsLaunchTests.swift */; };
 		27C278702B867727005D0062 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2786F2B867727005D0062 /* Network.swift */; };
 		27C278752B867AF3005D0062 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C278742B867AF3005D0062 /* Authentication.swift */; };
 		27C298E12B92074E009E7B5A /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C298E02B92074E009E7B5A /* AuthenticationTests.swift */; };
@@ -37,6 +35,8 @@
 		27C298EF2B9228C8009E7B5A /* StatusModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C298EE2B9228C8009E7B5A /* StatusModelTests.swift */; };
 		27C298F32B922B56009E7B5A /* NetworkDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C298F22B922B56009E7B5A /* NetworkDataSourceTests.swift */; };
 		27C298F62B92401D009E7B5A /* CharactersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C298F52B92401D009E7B5A /* CharactersViewModelTests.swift */; };
+		27D3BCF52B93A5D400CC133F /* MarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2785A2B867583005D0062 /* MarvelUITests.swift */; };
+		27D3BCF62B93A5D700CC133F /* MarvelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2785C2B867583005D0062 /* MarvelUITestsLaunchTests.swift */; };
 		27F839122B87AB17002D3A66 /* MarvelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F839112B87AB17002D3A66 /* MarvelResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -548,8 +548,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27C2785B2B867583005D0062 /* MarvelUITests.swift in Sources */,
-				27C2785D2B867583005D0062 /* MarvelUITestsLaunchTests.swift in Sources */,
+				27D3BCF52B93A5D400CC133F /* MarvelUITests.swift in Sources */,
+				27D3BCF62B93A5D700CC133F /* MarvelUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
