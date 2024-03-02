@@ -33,7 +33,6 @@ final class CharactersViewModel: ObservableObject {
         if offset == 0 { // Only trigger the loading view the first time
             status = .loading
         }
-        
         interactor.getCharacters(offset: offset)
             .sink { completion in
                 switch completion {

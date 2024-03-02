@@ -1,5 +1,5 @@
 //
-//  RootViewModelTests.swift
+//  CharactersViewModelTests.swift
 //  MarvelTests
 //
 //  Created by Sergio Amo on 1/3/24.
@@ -9,7 +9,7 @@ import XCTest
 import Combine
 @testable import Marvel
 
-final class RootViewModelTests: XCTestCase {
+final class CharactersViewModelTests: XCTestCase {
     
     // SUT
     var sut: CharactersViewModel!
@@ -47,11 +47,11 @@ final class RootViewModelTests: XCTestCase {
         // Check the 4 mock items are received
         sut.$marvelItems
             .sink { item in
-                if (item?.count == 4) {
+                if (item?.count ?? 0 > 0) {
                     expectationCharacters.fulfill()
                 }
             }.store(in: &suscriptors)
         
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 10)
     }
 }

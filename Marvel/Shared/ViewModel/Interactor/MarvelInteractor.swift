@@ -58,9 +58,13 @@ final class FakeMarvelInteractor: MarvelInteractorProtocol {
         ]
         let data = DataClass(offset: 0, total: 7, count: 7, results: items)
         let response = MarvelResponse(code: 200, data: data)
-        let publisher = CurrentValueSubject<MarvelResponse, Error>(response)
         
-        return publisher.eraseToAnyPublisher()
+        //Emit once and finish
+        return Just(response)
+            .delay(for: .seconds(0.5), scheduler: DispatchQueue.global(qos: .background))
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
+        
     }
     
     func getSeries(id: Int, offset: Int) -> AnyPublisher<MarvelResponse, Error> {
@@ -74,8 +78,11 @@ final class FakeMarvelInteractor: MarvelInteractorProtocol {
         ]
         let data = DataClass(offset: 0, total: 6, count: 6, results: items)
         let response = MarvelResponse(code: 200, data: data)
-        let publisher = CurrentValueSubject<MarvelResponse, Error>(response)
         
-        return publisher.eraseToAnyPublisher()
+        //Emit once and finish
+        return Just(response)
+            .delay(for: .seconds(0.5), scheduler: DispatchQueue.global(qos: .background))
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
     }
 }

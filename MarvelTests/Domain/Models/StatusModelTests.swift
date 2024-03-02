@@ -18,7 +18,7 @@ final class StatusModelTests: XCTestCase {
         if case .error(let actual) = error1 {
             XCTAssertEqual(actual, "Error1")
         } else {
-            XCTFail("Error getting Status error value")
+            XCTFail("Error getting Status.error value")
         }
     }
 }
