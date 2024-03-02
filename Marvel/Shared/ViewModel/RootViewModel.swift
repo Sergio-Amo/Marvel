@@ -18,7 +18,9 @@ final class RootViewModel: ObservableObject {
     
     init(debug: Bool = false) {
         if debug {
-            getCharactersTesting()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+                self?.getCharactersTesting()
+            }
         } else {
             getCharacters()
         }

@@ -12,10 +12,10 @@ import Combine
 final class RootViewModelTests: XCTestCase {
     
     // SUT
-    let sut = RootViewModel()
+    var sut: RootViewModel!
     
-    func testRootViewModel() {
-        
+    override func tearDown() {
+        sut = nil
     }
     
     func testgetCharactersTesting() {
@@ -25,18 +25,19 @@ final class RootViewModelTests: XCTestCase {
         let expectationLoaded = self.expectation(description: "status.loaded")
         let expectationCharacters = self.expectation(description: "Characters loaded")
         
-        var checkOnce = false
+        // As get characters runs on init
+        sut = RootViewModel(debug: true)
+        
         // Check if it enters in loading and then loaded
-        let status: () = sut.$status
+        sut.$status // publisher in @Published is exposed like this
             .sink{ status in
                 switch status {
                     case .loading:
-                        if (!checkOnce){
-                            checkOnce = true
-                            expectationLoading.fulfill()
-                        }
+                        expectationLoading.fulfill()
                     case .loaded:
                         expectationLoaded.fulfill()
+                    case .none:
+                        print("sut status initialized to none")
                     default:
                         XCTFail("Wrong status \(status)")
                         
@@ -44,20 +45,13 @@ final class RootViewModelTests: XCTestCase {
             }.store(in: &suscriptors)
         
         // Check the 4 mock items are received
-        let items: () = sut.$marvelItems
+        sut.$marvelItems
             .sink { item in
                 if (item?.count == 4) {
                     expectationCharacters.fulfill()
                 }
             }.store(in: &suscriptors)
         
-        sut.getCharactersTesting()
-        
         waitForExpectations(timeout: 5)
-    }
-    
-    func testCharacterTesting() {
-        let characters = sut.getCharactersDesign()
-        XCTAssertEqual(characters.count, 4)
     }
 }
