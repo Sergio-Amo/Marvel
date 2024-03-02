@@ -11,12 +11,12 @@ struct DetailView: View {
     var character: MarvelItem
     @StateObject private var viewModel: SeriesDetailViewModel
     
-    init(character: MarvelItem, debug: Bool = false) {
+    init(character: MarvelItem, debug: Bool = false, interactor: MarvelInteractorProtocol? = nil) {
         self.character = character
         if (debug) {
            _viewModel = StateObject(wrappedValue: SeriesDetailViewModel(debug: true))
         } else {
-           _viewModel = StateObject(wrappedValue: SeriesDetailViewModel())
+            _viewModel = StateObject(wrappedValue: SeriesDetailViewModel(interactor: interactor))
         }
     }
     var body: some View {

@@ -18,11 +18,11 @@ final class SeriesDetailViewModel : ObservableObject {
     var offset = 0
     var suscriptors = Set<AnyCancellable>()
     
-    init(debug: Bool = false) {
+    init(debug: Bool = false, interactor: MarvelInteractorProtocol? = nil ) {
         if debug {
             self.interactor = FakeMarvelInteractor()
         } else {
-            self.interactor = MarvelInteractor()
+            self.interactor = interactor ?? MarvelInteractor()
         }
     }
     

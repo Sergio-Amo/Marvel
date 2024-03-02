@@ -19,7 +19,10 @@ struct ListView: View {
                     ForEach(characters) { character in
                         CharacterCellView(character: character)
                             .background(
-                                NavigationLink(destination: DetailView(character: character)) {
+                                NavigationLink(destination: DetailView(
+                                    character: character,
+                                    interactor: rootViewModel.interactor
+                                )) {
                                     EmptyView()
                                 }
                             )
