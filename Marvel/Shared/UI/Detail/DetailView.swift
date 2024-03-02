@@ -9,12 +9,15 @@ import SwiftUI
 
 struct DetailView: View {
     var character: MarvelItem
-    var debug: Bool
-    @StateObject private var viewModel = SeriesDetailViewModel()
+    @StateObject private var viewModel: SeriesDetailViewModel
     
     init(character: MarvelItem, debug: Bool = false) {
         self.character = character
-        self.debug = debug
+        if (debug) {
+           _viewModel = StateObject(wrappedValue: SeriesDetailViewModel(debug: true))
+        } else {
+           _viewModel = StateObject(wrappedValue: SeriesDetailViewModel())
+        }
     }
     var body: some View {
         ScrollView {
@@ -129,7 +132,7 @@ struct DetailView: View {
             Spacer()
         }.onAppear {
             if let id = character.id {
-                debug ? viewModel.getSeriesMock() : viewModel.getSeries(id: id)
+                viewModel.getSeries(id: id)
             }
         }
     }
