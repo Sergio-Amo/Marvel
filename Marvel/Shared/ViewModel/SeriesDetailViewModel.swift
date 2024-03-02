@@ -30,6 +30,7 @@ final class SeriesDetailViewModel : ObservableObject {
         // This is to be extra careful but shouldn't be needed as the item that
         // triggers the loading shouldn't be appearing if the limit has been reached
         if self.itemLimitReached == true { return }
+        // Only trigger the loading view the first time (no elements)
         if offset == 0 {
             status = .loading
         }

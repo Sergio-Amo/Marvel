@@ -107,7 +107,8 @@ struct DetailView: View {
                                 .scaleEffect(2)
                                 .padding(32)
                                 .onAppear {
-                                    if let id = character.id {
+                                    if let id = character.id,
+                                       !series.isEmpty {
                                         viewModel.getSeries(id: id)
                                     }
                                 }
