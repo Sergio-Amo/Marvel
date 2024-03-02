@@ -17,6 +17,7 @@
 		276B47AF2B91E12E0070F4D0 /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276B47AE2B91E12E0070F4D0 /* StatusModel.swift */; };
 		276B47B22B91F12C0070F4D0 /* With.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276B47B12B91F12C0070F4D0 /* With.swift */; };
 		276B60782B935B8700744FF0 /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276B60772B935B8700744FF0 /* Networker.swift */; };
+		276B607E2B93738200744FF0 /* MarvelInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276B607D2B93738200744FF0 /* MarvelInteractor.swift */; };
 		27A898FF2B869659007F03A4 /* Extension+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A898FE2B869659007F03A4 /* Extension+URL.swift */; };
 		27A899012B86993B007F03A4 /* Extension+URLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A899002B86993B007F03A4 /* Extension+URLResponse.swift */; };
 		27C2783F2B867580005D0062 /* MarvelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2783E2B867580005D0062 /* MarvelApp.swift */; };
@@ -26,7 +27,7 @@
 		27C278512B867583005D0062 /* MarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C278502B867583005D0062 /* MarvelTests.swift */; };
 		27C2785B2B867583005D0062 /* MarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2785A2B867583005D0062 /* MarvelUITests.swift */; };
 		27C2785D2B867583005D0062 /* MarvelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2785C2B867583005D0062 /* MarvelUITestsLaunchTests.swift */; };
-		27C278702B867727005D0062 /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2786F2B867727005D0062 /* NetworkDataSource.swift */; };
+		27C278702B867727005D0062 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2786F2B867727005D0062 /* Network.swift */; };
 		27C278752B867AF3005D0062 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C278742B867AF3005D0062 /* Authentication.swift */; };
 		27C298E12B92074E009E7B5A /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C298E02B92074E009E7B5A /* AuthenticationTests.swift */; };
 		27C298E42B920F53009E7B5A /* withTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C298E32B920F53009E7B5A /* withTests.swift */; };
@@ -67,6 +68,7 @@
 		276B47AE2B91E12E0070F4D0 /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
 		276B47B12B91F12C0070F4D0 /* With.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = With.swift; sourceTree = "<group>"; };
 		276B60772B935B8700744FF0 /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
+		276B607D2B93738200744FF0 /* MarvelInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelInteractor.swift; sourceTree = "<group>"; };
 		27A898FE2B869659007F03A4 /* Extension+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URL.swift"; sourceTree = "<group>"; };
 		27A899002B86993B007F03A4 /* Extension+URLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLResponse.swift"; sourceTree = "<group>"; };
 		27C2783B2B867580005D0062 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +82,7 @@
 		27C278562B867583005D0062 /* MarvelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C2785A2B867583005D0062 /* MarvelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelUITests.swift; sourceTree = "<group>"; };
 		27C2785C2B867583005D0062 /* MarvelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		27C2786F2B867727005D0062 /* NetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
+		27C2786F2B867727005D0062 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		27C278742B867AF3005D0062 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		27C298E02B92074E009E7B5A /* AuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
 		27C298E32B920F53009E7B5A /* withTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = withTests.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		276B47AD2B91DC1A0070F4D0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				276B607C2B93736700744FF0 /* Interactor */,
 				2710591D2B87BC88003D9CC7 /* RootViewModel.swift */,
 				2763EBE62B8A200C00E3CF22 /* SeriesDetailViewModel.swift */,
 			);
@@ -149,6 +152,14 @@
 				276B47B12B91F12C0070F4D0 /* With.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		276B607C2B93736700744FF0 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				276B607D2B93738200744FF0 /* MarvelInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		27A898FD2B869644007F03A4 /* Extensions */ = {
@@ -267,7 +278,7 @@
 		27C2786E2B8676FD005D0062 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				27C2786F2B867727005D0062 /* NetworkDataSource.swift */,
+				27C2786F2B867727005D0062 /* Network.swift */,
 				276B60772B935B8700744FF0 /* Networker.swift */,
 			);
 			path = Network;
@@ -502,7 +513,7 @@
 				27C278412B867580005D0062 /* RootView.swift in Sources */,
 				271059222B87D3D4003D9CC7 /* ListView.swift in Sources */,
 				271059202B87C766003D9CC7 /* CharacterCellView.swift in Sources */,
-				27C278702B867727005D0062 /* NetworkDataSource.swift in Sources */,
+				27C278702B867727005D0062 /* Network.swift in Sources */,
 				271059282B87D65A003D9CC7 /* LoadingView.swift in Sources */,
 				276B60782B935B8700744FF0 /* Networker.swift in Sources */,
 				27C278752B867AF3005D0062 /* Authentication.swift in Sources */,
@@ -513,6 +524,7 @@
 				2710591E2B87BC88003D9CC7 /* RootViewModel.swift in Sources */,
 				27C2783F2B867580005D0062 /* MarvelApp.swift in Sources */,
 				271059252B87D528003D9CC7 /* ErrorView.swift in Sources */,
+				276B607E2B93738200744FF0 /* MarvelInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
