@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RootView: View {
     // Load the viewModel
-    @EnvironmentObject var viewModel: RootViewModel
+    @EnvironmentObject var viewModel: CharactersViewModel
     
     var body: some View {
         switch viewModel.status {
@@ -35,5 +35,5 @@ struct RootView: View {
 
 #Preview {
     RootView()
-        .environmentObject(RootViewModel(debug: true))
+        .environmentObject(CharactersViewModel(debug: true))
 }

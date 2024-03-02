@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ErrorView: View {
-    @EnvironmentObject var rootViewModel: RootViewModel
+    @EnvironmentObject var rootViewModel: CharactersViewModel
     
     private var error: String
     
@@ -60,5 +60,5 @@ struct ErrorView: View {
 
 #Preview {
     ErrorView(error: "Error 409: Bad api request!")
-        .environmentObject(RootViewModel(debug: true))
+        .environmentObject(CharactersViewModel(debug: true))
 }

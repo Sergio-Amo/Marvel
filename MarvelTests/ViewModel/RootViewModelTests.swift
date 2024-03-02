@@ -12,7 +12,7 @@ import Combine
 final class RootViewModelTests: XCTestCase {
     
     // SUT
-    var sut: RootViewModel!
+    var sut: CharactersViewModel!
     
     override func tearDown() {
         sut = nil
@@ -26,7 +26,7 @@ final class RootViewModelTests: XCTestCase {
         let expectationCharacters = self.expectation(description: "Characters loaded")
         
         // As get characters runs on init
-        sut = RootViewModel(debug: true)
+        sut = CharactersViewModel(debug: true)
         
         // Check if it enters in loading and then loaded
         sut.$status // publisher in @Published is exposed like this

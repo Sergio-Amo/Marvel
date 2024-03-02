@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListView: View {
-    @EnvironmentObject var rootViewModel: RootViewModel
+    @EnvironmentObject var rootViewModel: CharactersViewModel
     //Color scheme (Dark/light mode)
     @Environment(\.colorScheme) var colorScheme
     
@@ -50,5 +50,5 @@ struct ListView: View {
 
 #Preview {
     ListView()
-        .environmentObject(RootViewModel(debug: true))
+        .environmentObject(CharactersViewModel(debug: true))
 }

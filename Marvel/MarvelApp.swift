@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct MarvelApp: App {
     
-    @StateObject var rootViewModel = RootViewModel()
+    @StateObject var rootViewModel = CharactersViewModel()
     
     var body: some Scene {
         WindowGroup {

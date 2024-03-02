@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2710591E2B87BC88003D9CC7 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710591D2B87BC88003D9CC7 /* RootViewModel.swift */; };
+		2710591E2B87BC88003D9CC7 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710591D2B87BC88003D9CC7 /* CharactersViewModel.swift */; };
 		271059202B87C766003D9CC7 /* CharacterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710591F2B87C766003D9CC7 /* CharacterCellView.swift */; };
 		271059222B87D3D4003D9CC7 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271059212B87D3D4003D9CC7 /* ListView.swift */; };
 		271059252B87D528003D9CC7 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271059242B87D528003D9CC7 /* ErrorView.swift */; };
@@ -58,7 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2710591D2B87BC88003D9CC7 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		2710591D2B87BC88003D9CC7 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
 		2710591F2B87C766003D9CC7 /* CharacterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellView.swift; sourceTree = "<group>"; };
 		271059212B87D3D4003D9CC7 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		271059242B87D528003D9CC7 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				276B607C2B93736700744FF0 /* Interactor */,
-				2710591D2B87BC88003D9CC7 /* RootViewModel.swift */,
+				2710591D2B87BC88003D9CC7 /* CharactersViewModel.swift */,
 				2763EBE62B8A200C00E3CF22 /* SeriesDetailViewModel.swift */,
 			);
 			path = ViewModel;
@@ -521,7 +521,7 @@
 				27F839122B87AB17002D3A66 /* MarvelResponse.swift in Sources */,
 				2763EBE72B8A200C00E3CF22 /* SeriesDetailViewModel.swift in Sources */,
 				27A898FF2B869659007F03A4 /* Extension+URL.swift in Sources */,
-				2710591E2B87BC88003D9CC7 /* RootViewModel.swift in Sources */,
+				2710591E2B87BC88003D9CC7 /* CharactersViewModel.swift in Sources */,
 				27C2783F2B867580005D0062 /* MarvelApp.swift in Sources */,
 				271059252B87D528003D9CC7 /* ErrorView.swift in Sources */,
 				276B607E2B93738200744FF0 /* MarvelInteractor.swift in Sources */,

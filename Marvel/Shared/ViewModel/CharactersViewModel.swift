@@ -1,5 +1,5 @@
 //
-//  RootViewModel.swift
+//  CharactersViewModel.swift
 //  Marvel
 //
 //  Created by Sergio Amo on 22/2/24.
@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-final class RootViewModel: ObservableObject {
+final class CharactersViewModel: ObservableObject {
     @Published var status = Status.none
     @Published var marvelItems: [MarvelItem]? = []
     @Published var itemLimitReached = false
