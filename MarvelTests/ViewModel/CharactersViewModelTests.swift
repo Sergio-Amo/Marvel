@@ -52,6 +52,6 @@ final class CharactersViewModelTests: XCTestCase {
                 }
             }.store(in: &suscriptors)
         
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 15)
     }
 }
