@@ -29,7 +29,7 @@ final class DetailViewTests: XCTestCase {
             XCTAssertNotNil(view)
             
             let series = try view.actualView().viewModel.marvelItems
-            XCTAssertTrue(series?.count ?? 0 > 0, "No series in the view, increasing the delay between inspection might resolve the issue")
+            XCTAssertTrue(series?.count ?? 0 > 0, "No series loaded, increasing the delay before inspection might resolve the issue")
             
             let itemCount = try view.actualView().inspect().count
             XCTAssertEqual(itemCount, 1)

@@ -9,6 +9,13 @@ import XCTest
 import Combine
 @testable import Marvel
 
+
+/*
+ *      TODO: Finsih this test
+ *           ¯\_(ツ)_/¯
+ */
+
+
 /*class NetworkerTests: XCTestCase {
     var suscriptors = Set<AnyCancellable>()
     

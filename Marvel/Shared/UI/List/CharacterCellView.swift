@@ -41,10 +41,8 @@ struct CharacterCellView: View {
                 .background(
                     LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom)
                 )
-                .id(1)
         })
         .cornerRadius(15)
-        .id(0)
     }
 }
 
