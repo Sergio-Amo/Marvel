@@ -34,6 +34,7 @@ final class CharactersViewModel: ObservableObject {
             status = .loading
         }
         interactor.getCharacters(offset: offset)
+            .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                     case .failure:

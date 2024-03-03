@@ -36,6 +36,7 @@ final class SeriesDetailViewModel : ObservableObject {
         }
         
         interactor.getSeries(id: id, offset: offset)
+            .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                     case .failure:
