@@ -17,6 +17,8 @@
 		274131EE2B94AF5200DBA4AA /* ErrorViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274131ED2B94AF5200DBA4AA /* ErrorViewTests.swift */; };
 		274131F12B94B48B00DBA4AA /* LoadingViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274131F02B94B48B00DBA4AA /* LoadingViewTests.swift */; };
 		274131F42B94B5DB00DBA4AA /* DetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274131F32B94B5DB00DBA4AA /* DetailViewTests.swift */; };
+		274131F82B94C7BF00DBA4AA /* Inspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274131F62B94C7AB00DBA4AA /* Inspection.swift */; };
+		274131FC2B94C81A00DBA4AA /* InspectionTestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274131F92B94C7F400DBA4AA /* InspectionTestTarget.swift */; };
 		2763EBE52B8A1FFA00E3CF22 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2763EBE42B8A1FFA00E3CF22 /* DetailView.swift */; };
 		2763EBE72B8A200C00E3CF22 /* SeriesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2763EBE62B8A200C00E3CF22 /* SeriesDetailViewModel.swift */; };
 		276B47AF2B91E12E0070F4D0 /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276B47AE2B91E12E0070F4D0 /* StatusModel.swift */; };
@@ -73,6 +75,8 @@
 		274131ED2B94AF5200DBA4AA /* ErrorViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewTests.swift; sourceTree = "<group>"; };
 		274131F02B94B48B00DBA4AA /* LoadingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewTests.swift; sourceTree = "<group>"; };
 		274131F32B94B5DB00DBA4AA /* DetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewTests.swift; sourceTree = "<group>"; };
+		274131F62B94C7AB00DBA4AA /* Inspection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspection.swift; sourceTree = "<group>"; };
+		274131F92B94C7F400DBA4AA /* InspectionTestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionTestTarget.swift; sourceTree = "<group>"; };
 		2763EBE42B8A1FFA00E3CF22 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		2763EBE62B8A200C00E3CF22 /* SeriesDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailViewModel.swift; sourceTree = "<group>"; };
 		276B47AE2B91E12E0070F4D0 /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
@@ -182,6 +186,15 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		274131F52B94C78B00DBA4AA /* Inspection */ = {
+			isa = PBXGroup;
+			children = (
+				274131F62B94C7AB00DBA4AA /* Inspection.swift */,
+				274131F92B94C7F400DBA4AA /* InspectionTestTarget.swift */,
+			);
+			path = Inspection;
+			sourceTree = "<group>";
+		};
 		276B47AD2B91DC1A0070F4D0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +259,7 @@
 				27C278422B867582005D0062 /* Assets.xcassets */,
 				27C278442B867582005D0062 /* Marvel.entitlements */,
 				27C278452B867582005D0062 /* Preview Content */,
+				274131F52B94C78B00DBA4AA /* Inspection */,
 			);
 			path = Marvel;
 			sourceTree = "<group>";
@@ -580,6 +594,7 @@
 				27C2783F2B867580005D0062 /* MarvelApp.swift in Sources */,
 				271059252B87D528003D9CC7 /* ErrorView.swift in Sources */,
 				276B607E2B93738200744FF0 /* MarvelInteractor.swift in Sources */,
+				274131F82B94C7BF00DBA4AA /* Inspection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +616,7 @@
 				27C298E42B920F53009E7B5A /* withTests.swift in Sources */,
 				27C298F32B922B56009E7B5A /* NetworkDataSourceTests.swift in Sources */,
 				274131EE2B94AF5200DBA4AA /* ErrorViewTests.swift in Sources */,
+				274131FC2B94C81A00DBA4AA /* InspectionTestTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

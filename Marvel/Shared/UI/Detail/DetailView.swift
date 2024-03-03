@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DetailView: View {
+    // For ViewInspector
+    internal let inspection = Inspection<Self>()
+    
     var character: MarvelItem
     @StateObject private var viewModel: SeriesDetailViewModel
     
@@ -137,6 +140,7 @@ struct DetailView: View {
                 viewModel.getSeries(id: id)
             }
         }
+        .onReceive(inspection.notice) { self.inspection.visit(self, $0) }
     }
 }
 
