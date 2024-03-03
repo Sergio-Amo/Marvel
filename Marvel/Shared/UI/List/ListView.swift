@@ -11,6 +11,8 @@ struct ListView: View {
     @EnvironmentObject var rootViewModel: CharactersViewModel
     //Color scheme (Dark/light mode)
     @Environment(\.colorScheme) var colorScheme
+    // For ViewInspector
+    internal let inspection = Inspection<Self>()
     
     var body: some View {
         NavigationStack {
@@ -29,6 +31,7 @@ struct ListView: View {
                             .listRowSeparator(.hidden)
                             .listRowBackground(colorScheme == .dark ? Color.black : Color.clear)
                     }
+                    .id("characters")
                 }
                 if !rootViewModel.itemLimitReached {
                     ProgressView()
@@ -43,11 +46,11 @@ struct ListView: View {
                         }
                 }
             }
-            .id(0)
             .frame( maxWidth: .infinity)
             .listStyle(GroupedListStyle())
             .navigationTitle("Characters")
         }
+        .onReceive(inspection.notice) { self.inspection.visit(self, $0) }
     }
 }
 
