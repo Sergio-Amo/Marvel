@@ -27,6 +27,7 @@ struct ErrorView: View {
             Text(error)
                 .font(.title2)
                 .bold()
+                .id(2)
             
             // This kind of message is not intended for users,
             // but being an example app will be useful for people trying to test it
@@ -52,6 +53,7 @@ struct ErrorView: View {
                     .shadow(radius: 10, x: 12, y: 10)
                 
             })
+            .id(3)
         }
         .id(1)
         .padding()

@@ -98,6 +98,7 @@ struct DetailView: View {
                             .padding(.horizontal, 12)
                             .padding(.bottom, 36)
                             .padding(.top, 0)
+                            .id(3)
                         }
                         // Last item ProgressView that triggers getSeries onAppear
                         if !viewModel.itemLimitReached {

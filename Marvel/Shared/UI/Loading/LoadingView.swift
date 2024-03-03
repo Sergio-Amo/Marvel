@@ -28,9 +28,11 @@ struct LoadingView: View {
                             isRotating = 360.0
                         }
                 }
+                .id(0)
             
             Text("Loading, please wait")
                 .font(.title)
+                .id(1)
         }
     }
 }
