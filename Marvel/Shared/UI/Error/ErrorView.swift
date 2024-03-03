@@ -31,7 +31,7 @@ struct ErrorView: View {
             
             // This kind of message is not intended for users,
             // but being an example app will be useful for people trying to test it
-            Text("Please verify you had added your api keys inside the ApiKeys file")
+            Text("Please verify you had added your api keys inside the Authentication file")
                 .multilineTextAlignment(.center)
                 .bold()
                 .font(.subheadline)
