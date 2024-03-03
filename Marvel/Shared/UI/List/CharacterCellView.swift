@@ -59,5 +59,9 @@ struct CharacterCellView: View {
             ))
     }
     .frame( maxWidth: .infinity)
+    #if os(OSX)
+    .listStyle(DefaultListStyle())
+    #else
     .listStyle(GroupedListStyle())
+    #endif
 }

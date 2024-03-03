@@ -47,7 +47,11 @@ struct ListView: View {
                 }
             }
             .frame( maxWidth: .infinity)
+            #if os(OSX)
+            .listStyle(DefaultListStyle())
+            #else
             .listStyle(GroupedListStyle())
+            #endif
             .navigationTitle("Characters")
         }
         .onReceive(inspection.notice) { self.inspection.visit(self, $0) }
