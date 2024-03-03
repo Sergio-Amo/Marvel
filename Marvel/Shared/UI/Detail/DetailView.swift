@@ -12,7 +12,7 @@ struct DetailView: View {
     internal let inspection = Inspection<Self>()
     
     var character: MarvelItem
-    @StateObject private var viewModel: SeriesDetailViewModel
+    @StateObject var viewModel: SeriesDetailViewModel
     
     init(character: MarvelItem, debug: Bool = false, interactor: MarvelInteractorProtocol? = nil) {
         self.character = character
@@ -101,8 +101,8 @@ struct DetailView: View {
                             .padding(.horizontal, 12)
                             .padding(.bottom, 36)
                             .padding(.top, 0)
-                            .id(3)
                         }
+                        .id("seriesStack")
                         // Last item ProgressView that triggers getSeries onAppear
                         if !viewModel.itemLimitReached {
                             ProgressView()

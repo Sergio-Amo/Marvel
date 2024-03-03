@@ -6,19 +6,12 @@
 //
 
 import XCTest
-import SwiftUI
-import Combine
 import ViewInspector
 @testable import Marvel
 
 final class DetailViewTests: XCTestCase {
     func testDetailView() throws {
-        // This will trigger the error mentioned here:
-        // https://github.com/nalexn/ViewInspector/discussions/152
-        // Accessing StateObject's object without being installed on a View.
-        // This will create a new instance each time.
-        // Should only affect tests and not the app itself as this test file is not a view
-        let view = DetailView(
+        let sut = DetailView(
             character: MarvelItem(
                 id: 1,
                 name: "Test Character",
@@ -29,27 +22,33 @@ final class DetailViewTests: XCTestCase {
             ),
             debug: true
         )
+        let exp = sut.inspection.inspect(after: 1) { view in // Get actual view
+            let vStackSeries = try view.actualView().inspect().find(viewWithId: "seriesStack")
+            XCTAssertNotNil(vStackSeries)
+            
+            XCTAssertNotNil(view)
+            
+            let series = try view.actualView().viewModel.marvelItems
+            XCTAssertTrue(series?.count ?? 0 > 0, "No series in the view, increasing the delay between inspection might resolve the issue")
+            
+            let itemCount = try view.actualView().inspect().count
+            XCTAssertEqual(itemCount, 1)
+            
+            // Character Zstack
+            let zstack = try view.actualView().inspect().find(viewWithId: 0)
+            XCTAssertNotNil(zstack)
+            
+            // Text charName
+            let characterName =  try view.actualView().inspect().find(viewWithId: 1)
+            XCTAssertNotNil(characterName)
+            
+            // ScrollView
+            let scrollView = try view.actualView().inspect().find(viewWithId: 2)
+            XCTAssertNotNil(scrollView)
+            
+        }
+        ViewHosting.host(view: sut)
+        wait(for: [exp], timeout: 5)
         
-        XCTAssertNotNil(view)
-        
-        let itemCount = try view.inspect().count
-        XCTAssertEqual(itemCount, 1)
-        
-        // Character Zstack
-        let zstack = try view.inspect().find(viewWithId: 0)
-        XCTAssertNotNil(zstack)
-        
-        // Text charName
-        let characterName =  try view.inspect().find(viewWithId: 1)
-        XCTAssertNotNil(characterName)
-        
-        // ScrollView
-        let scrollView = try view.inspect().find(viewWithId: 2)
-        XCTAssertNotNil(scrollView)
-        
-        // Series vStack
-/*        let vStackSeries = try view.inspect().find(viewWithId: 3)
-        XCTAssertNotNil(vStackSeries)
- */
     }
 }
