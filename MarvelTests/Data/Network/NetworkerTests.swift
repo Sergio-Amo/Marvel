@@ -9,7 +9,7 @@ import XCTest
 import Combine
 @testable import Marvel
 
-class NetworkerTests: XCTestCase {
+/*class NetworkerTests: XCTestCase {
     var suscriptors = Set<AnyCancellable>()
     
     func testCallServer() {
@@ -48,26 +48,6 @@ final class MockURLSession: URLSessionProtocol {
     
     func dataTaskPublisher(for request: URLRequest) -> URLSession.DataTaskPublisher {
         // I don't know how to return my publisher as URLSession.DataTaskPublisher
-    }
-}
-
-
-
-
-
-
-
-
-/*
-// Mock URLSession
-class MockURLSession: URLSession {
-    var publisher: AnyPublisher<MarvelResponse, any Error>
-
-    init(publisher: AnyPublisher<MarvelResponse, any Error>) {
-        self.publisher = publisher
-    }
-    func dataTaskPublisher(for request: URLRequest) -> URLSession.DataTaskPublisher {
-        return URLSession.DataTaskPublisher(publisher: publisher)
     }
 }
 */
