@@ -12,7 +12,7 @@ protocol AuthenticationProtocol {
     var authParams: String { get }
 }
 
-struct Authentication {
+struct Authentication: AuthenticationProtocol {
     private let publicKey = "INSERT_YOUR_PUBLIC_KEY_HERE"
     private let privateKey = "INSERT_YOUR_PRIVATEKEY_KEY_HERE"
     
